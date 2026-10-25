@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FC">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeHeaderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivHomeLogo"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/logo"
+            app:tint="#266153"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NeuroSiren"
+            android:textColor="#266153"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/btnProfile"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/homeHeaderLayout"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp">
+
+            <View
+                android:id="@+id/viewRadarCircle"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/green_circle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/shield"
+                app:tint="#266153"
+                app:layout_constraintTop_toTopOf="@id/viewRadarCircle"
+                app:layout_constraintBottom_toBottomOf="@id/viewRadarCircle"
+                app:layout_constraintStart_toStartOf="@id/viewRadarCircle"
+                app:layout_constraintEnd_toEndOf="@id/viewRadarCircle" />
+
+            <TextView
+                android:id="@+id/tvStatusHeadline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monitoring"
+                android:textColor="#266153"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/viewRadarCircle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- 1. System Active Badge -->
+            <TextView
+                android:id="@+id/tvStatusBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="System Active"
+                android:textColor="#266153"
+                android:textSize="14sp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp"
+                android:background="@drawable/bg_pill_badge_teal"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvStatusHeadline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- 2. Voice Detected Indicator -->
+            <LinearLayout
+                android:id="@+id/layoutVoiceIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp"
+                android:visibility="invisible"
+                tools:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@id/tvStatusBadge"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:background="@drawable/green_circle"
+                    android:backgroundTint="#10B981" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Voice Detected..."
+                    android:textColor="#10B981"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="6dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvStatusDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No signs of immediate neurological distress detected."
+                android:textColor="#4B5563"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/layoutVoiceIndicator" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStartMic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Monitoring"
+                android:textColor="#FFFFFF"
+                app:backgroundTint="#266153"
+                app:cornerRadius="24dp"
+                android:layout_marginTop="16dp"
+                app:icon="@drawable/record"
+                app:iconTint="#FFFFFF"
+                app:layout_constraintTop_toBottomOf="@id/tvStatusDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHomeMetricsList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingHorizontal="12dp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/btnStartMic"
+                tools:listitem="@layout/item_home_metric_card" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

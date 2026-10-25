@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="14dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:strokeWidth="0dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tvMetricCardCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Speech"
+            android:textColor="#4B5563"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvMetricCardValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Normal"
+            android:textColor="#111827"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            app:layout_constraintTop_toBottomOf="@id/tvMetricCardCategory"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivCheckIcon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/check"
+            android:layout_marginTop="6dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMetricCardValue"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/tvMetricCardStatusLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stable"
+            android:textColor="#266153"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginStart="6dp"
+            app:layout_constraintStart_toEndOf="@id/ivCheckIcon"
+            app:layout_constraintTop_toTopOf="@id/ivCheckIcon"
+            app:layout_constraintBottom_toBottomOf="@id/ivCheckIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

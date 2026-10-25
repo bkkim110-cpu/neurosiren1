@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NueroSiren</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="three_step_explanation"><b>Step 1:</b> The speech evaluation step measures your voice clarity and speech patterns by having you speak into the device. It actively checks for sudden slurring, slow speech, or difficulty pronouncing words, which are early warning signs of a stroke.\n\n<b>Step 2:</b> The physical motion step measures your muscle control and coordination through quick facial, eye, and arm exercises using the camera and motion sensors. It specifically looks for facial drooping, irregular eye movements, or an arm drifting downward to detect unilateral weakness.\n\n<b>Step 3:</b> The risk assessment step evaluates the combined results from your physical and speech tests to determine your immediate medical risk level. If critical indicators are found, the app automatically prepares a medical report and helps you contact emergency services right away.</string>
+
+    <string name="step_1_title">Step 1</string>
+    <string name="step_1_desc">The speech evaluation step measures your voice clarity and speech patterns by having you speak into the device. It actively checks for sudden slurring, slow speech, or difficulty pronouncing words, which are early warning signs of a stroke.</string>
+    <string name="step_2_title">Step 2</string>
+    <string name="step_2_desc">The physical motion step measures your muscle control and coordination through quick facial, eye, and arm exercises using the camera and motion sensors. It specifically looks for facial drooping, irregular eye movements, or an arm drifting downward to detect unilateral weakness.</string>
+    <string name="step_3_title">Step 3</string>
+    <string name="step_3_desc">The risk assessment step evaluates the combined results from your physical and speech tests to determine your immediate medical risk level. If critical indicators are found, the app automatically prepares a medical report and helps you contact emergency services right away.</string>
+</resources>
